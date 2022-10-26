@@ -1,0 +1,10 @@
+{
+  "Name": "SeasonalPricing",
+  "Author": "jaerockets",
+  "Version": "1.0.0",
+  "Description": "increases sale price of out of season crops",
+  "UniqueID": "jaerockets.SeasonalPricing",
+  "EntryDll": "SeasonalPricing.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}

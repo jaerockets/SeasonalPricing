@@ -1,0 +1,84 @@
+﻿Spring:
+
+crops:
+Blue Jazz
+Cauliflower
+Coffee Bean [summer also]
+Garlic
+Green Bean
+Kale
+Parsnip
+Potato
+Rhubarb
+Strawberry
+Tulip
+Unmilled Rice
+
+foraging:
+Wild Horseradish
+Daffodil
+Leek
+Dandelion
+Spring Onion
+Morel
+Common Mushroom
+Salmonberry
+
+
+Summer:
+
+crops:
+Blueberry
+Corn [fall also]
+Hops
+Hot Pepper
+Melon
+Poppy
+Radish
+Red Cabbage
+Starfruit
+Summer Spangle
+Sunflower [fall also]
+Tomato
+Wheat [fall also]
+
+foraging:
+Grape
+Spice Berry
+Sweet Pea
+Red Mushroom
+Fiddlehead Fern
+Common Mushroom
+
+Fall:
+
+crops:
+Amaranth
+Artichoke
+Beet
+Bok Choy
+Cranberries
+Eggplant
+Fairy Rose
+Grape
+Pumpkin
+Yam
+
+foraging:
+Blackberry
+Chanterelle
+Common Mushroom
+Hazelnut
+Purple Mushroom
+Red Mushroom
+Wild Plum
+
+
+Winter:
+
+foraging:
+Winter Root
+Crystal Fruit
+Snow Yam
+Crocus
+Holly

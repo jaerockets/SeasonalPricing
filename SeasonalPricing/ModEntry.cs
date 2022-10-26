@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using StardewModdingAPI;
@@ -25,38 +26,27 @@ namespace SeasonalPricing
         {
             if (e.NameWithoutLocale.IsEquivalentTo("Data/ObjectInformation"))
             {
-                /*    e.Edit(asset =>
-                    {
-                        var data = asset.AsDictionary<int, string>().Data;
-
-                        foreach (int itemID in data.Keys.ToArray()) 
-                        {
-                            string[] fields = data[itemID].Split('/'); //for each itemID, create an array indexed by '/',
-                            fields[1] = (int.Parse(fields[1]) * 2).ToString(); //change value of field [1] to value of field [1] * 2 (doubles price of all items)
-                            data[itemID] = string.Join("/", fields); //convert array back to string
-                        }
-                    }); */
                 e.Edit(asset =>
                 {
                     this.Monitor.Log("lambda execute", LogLevel.Debug);
                     var data = asset.AsDictionary<int, string>().Data;
+                    List<int> springCrops = new List<int> { 597, 190, 433, 248, 188, 250, 24, 192, 222, 400, 591, 271, 16, 18, 20, 22, 399, 257, 404, 296 };
                     switch (Game1.currentSeason)
                     {
                         case "spring":
                             this.Monitor.Log("spring", LogLevel.Debug);
+                            foreach (int itemID in data.Keys.ToArray())
+                            {
+                                if (springCrops.Contains(itemID))
+                                {
+                                    string[] fields = data[itemID].Split('/');
+                                    this.Monitor.Log($"{data[itemID]}", LogLevel.Debug);
+                                    fields[1] = (int.Parse(fields[1]) / 2).ToString();
+                                    data[itemID] = string.Join("/", fields);
+                                    this.Monitor.Log($"{data[itemID]}", LogLevel.Debug);
+                                }
+                            }
                             break;
-                    }
-                    foreach (int itemID in data.Keys.ToArray())
-                    {
-                        string[] fields = data[itemID].Split('/');
-                        if (fields[0] == "Daffodil")
-                        {
-                            this.Monitor.Log("Daffodil", LogLevel.Debug);
-                            this.Monitor.Log($"{(int.Parse(fields[1]) * 2).ToString()}", LogLevel.Debug);
-                            fields[1] = (int.Parse(fields[1]) * 2).ToString();
-                            data[itemID] = string.Join("/", fields);
-                            this.Monitor.Log($"{data[itemID]}", LogLevel.Debug);
-                        }
                     }
                 });
             }
